@@ -11,13 +11,10 @@ const app = new App({
     token: config.SLACK_BOT_TOKEN
 });
 app.message('hello', ({ message, say }) => {
-    say({
-        "text": `Hey there <@${message.user}>!`
-    });
+    say({ "text": `Hey there <@${message.user}>!` });
 });
+app.error(console.log);
 
 const functions = require('firebase-functions');
 // https://{your domain}.cloudfunctions.net/slack/events
-exports.slack = functions.https.onRequest(async (req, res) => { 
-    expressReceiver.app(req, res); 
-});
+exports.slack = functions.https.onRequest(expressReceiver.app);
