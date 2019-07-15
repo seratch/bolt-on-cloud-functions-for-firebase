@@ -10,6 +10,8 @@ This is a simple Bolt app which runs on Cloud Functions for Firebase.
 Use node 10.x and its corresponding npm.
 
 ```
+vi .firebaserc # set your own project
+
 npm install -g firebase-tools
 cd functions
 npm i
