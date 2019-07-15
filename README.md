@@ -8,6 +8,7 @@ Use node 10.x and its corresponding npm.
 npm install -g firebase-tools
 cd functions
 npm i
+cp -p _config.js config.js # and modify config.js
 cd -
 ```
 
