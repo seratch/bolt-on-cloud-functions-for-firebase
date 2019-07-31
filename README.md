@@ -10,12 +10,15 @@ This is a simple Bolt app which runs on Cloud Functions for Firebase.
 Use node 10.x and its corresponding npm.
 
 ```
+cp _firebaserc .firebaserc
 vi .firebaserc # set your own project
 
 npm install -g firebase-tools
+firebase functions:config:set slack.signing_secret=522777abcabcabcabcabcabcabcabc
+firebase functions:config:set slack.bot_token=xoxb-1234567890-123456789012-abcabcabcabcabcabc
+
 cd functions
 npm i
-cp -p _config.js config.js # and modify config.js
 cd -
 ```
 
@@ -35,15 +38,17 @@ firebase deploy
 
 ### Slack App
 
-Set `https://{your domain}.cloudfunctions.net/slack/events` as the Request URL for event subscriptions.
+https://api.slack.com/apps
+
+Set `https://{your domain}.cloudfunctions.net/slack/events` as the Request URL for `/echo-from-firebase` slash command.
 
 ### Cloud Functions for Firebase
 
-You have nothing to configure. Don't forget enabling billing info if it's your first time to use it.
+You have nothing to configure. Don't forget enabling the billing info if it's your first time to use it.
 
 ## How to make sure if it works
 
-Post a message including `hello`. Then you'll receive a message saying `Hey there @yourname` from your bot user!
+Use the command `/echo-from-firebase` in your Slack workspace.
 
 ## LICENSE  
 

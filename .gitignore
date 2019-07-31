@@ -9,3 +9,5 @@ jspm_packages
 .webpack
 
 config.js
+.firebaserc
+firebase-debug.log
