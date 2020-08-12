@@ -7,7 +7,7 @@ This is a simple Bolt app which runs on Cloud Functions for Firebase.
 
 ## Setup
 
-Use node 10.x and its corresponding npm.
+Use node 12.x and its corresponding npm.
 
 ```bash
 cp _firebaserc .firebaserc
